@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{1E3A5F}
+\hypersetup{colorlinks=true, urlcolor=accent}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}
+  {0em}
+  {}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\setlist{nosep, leftmargin=*, before=\vspace{2pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% ─── Header ──────────────────────────────────────────────────────────────
+\begin{center}
+{\Huge\bfseries <<basics.name>>}\\[3pt]
+<<#basics.label>>{\large\itshape <<basics.label>>}\\[6pt]<</basics.label>>
+\small
+<<#basics.location.city>><<basics.location.city>><<#basics.location.countryCode>>, Mali<</basics.location.countryCode>><</basics.location.city>>
+<<#basics.phone>>~$\bullet$~<<basics.phone>><</basics.phone>>
+<<#basics.email>>~$\bullet$~\href{mailto:<<basics.email>>}{<<basics.email>>}<</basics.email>>
+<<#basics.profiles.0.url>>~$\bullet$~\href{<<basics.profiles.0.url>>}{<<basics.profiles.0.network>>}<</basics.profiles.0.url>>
+\end{center}
+
+\vspace{4pt}
+
+% ─── Profil ──────────────────────────────────────────────────────────────
+<<#basics.summary>>
+\section*{Profil}
+<<basics.summary>>
+<</basics.summary>>
+
+% ─── Expérience ──────────────────────────────────────────────────────────
+<<#work.0>>\section*{Expérience professionnelle}<</work.0>>
+<<#work>>
+\noindent\textbf{<<position>>} \hfill <<startDate>><<#endDate>> -- <<endDate>><</endDate>>\\
+\textit{<<name>>}<<#location>>, <<location>><</location>>
+<<#summary>>\\<<summary>><</summary>>
+<<#highlights.0>>
+\begin{itemize}
+<<#highlights>>\item <<.>>
+<</highlights>>
+\end{itemize}
+<</highlights.0>>
+\vspace{4pt}
+<</work>>
+
+% ─── Formation ───────────────────────────────────────────────────────────
+<<#education.0>>\section*{Formation}<</education.0>>
+<<#education>>
+\noindent\textbf{<<studyType>><<#area>> -- <<area>><</area>>} \hfill <<startDate>><<#endDate>> -- <<endDate>><</endDate>>\\
+\textit{<<institution>>}\\[4pt]
+<</education>>
+
+% ─── Compétences ─────────────────────────────────────────────────────────
+<<#skills.0>>\section*{Compétences}<</skills.0>>
+<<#skills>>
+\noindent\textbf{<<name>>} : <<#keywords>><<.>>, <</keywords>>\\[2pt]
+<</skills>>
+
+% ─── Langues ─────────────────────────────────────────────────────────────
+<<#languages.0>>\section*{Langues}<</languages.0>>
+<<#languages>>
+\textbf{<<language>>}<<#fluency>> (<<fluency>>)<</fluency>>\quad
+<</languages>>
+
+\end{document}

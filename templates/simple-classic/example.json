@@ -1,0 +1,64 @@
+{
+  "basics": {
+    "name": "Aminata Keïta",
+    "label": "Cheffe de projet · Développement",
+    "email": "aminata.keita@example.ml",
+    "phone": "+223 76 12 34 56",
+    "location": { "city": "Bamako", "countryCode": "ML" },
+    "profiles": [
+      { "network": "LinkedIn", "url": "https://linkedin.com/in/aminata-keita" }
+    ],
+    "summary": "Cheffe de projet avec 4 ans d'expérience dans le secteur du développement et de l'humanitaire au Mali. Coordination d'équipes multi-bailleurs et reporting pour bailleurs internationaux."
+  },
+  "work": [
+    {
+      "name": "Save the Children International",
+      "position": "Coordinatrice de projets",
+      "location": "Bamako",
+      "startDate": "2023-06",
+      "endDate": "Présent",
+      "summary": "Coordination de 3 projets éducation et nutrition à Mopti et Ségou.",
+      "highlights": [
+        "Pilotage d'un budget annuel de 1,2 M USD avec reporting mensuel à 4 bailleurs",
+        "Gestion d'une équipe terrain de 12 personnes répartie sur 3 régions"
+      ]
+    },
+    {
+      "name": "UNICEF Mali",
+      "position": "Assistante de programme",
+      "location": "Bamako",
+      "startDate": "2022-01",
+      "endDate": "2023-05",
+      "summary": "Appui aux programmes Protection de l'Enfance.",
+      "highlights": [
+        "Rédaction de 8 notes de plaidoyer présentées au Ministère"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Institut Polytechnique de Gestion (IPG)",
+      "area": "Développement et coopération internationale",
+      "studyType": "Master",
+      "startDate": "2020",
+      "endDate": "2022"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Gestion de projet",
+      "keywords": ["PMBOK", "GAR", "Cadre logique", "Suivi-évaluation"],
+      "levelNum": 5
+    },
+    {
+      "name": "Outils",
+      "keywords": ["Excel", "Power BI", "Kobo Toolbox"],
+      "levelNum": 4
+    }
+  ],
+  "languages": [
+    { "language": "Français", "fluency": "Langue maternelle" },
+    { "language": "Bambara", "fluency": "Langue maternelle" },
+    { "language": "Anglais", "fluency": "Courant (C1)" }
+  ]
+}

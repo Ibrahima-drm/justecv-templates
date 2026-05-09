@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ml-cv port of AltaCV by LianTze Lim. License: LPPL-1.3.
+% Mustache delimiters: << and >> so they don't conflict with LaTeX braces.
+% Compiled with Tectonic via the mlcv-pdf-service.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper]{altacv}
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Hyperlinks without pdfx (which would require PDF/A xmpdata).
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\begin{document}
+
+\name{<<basics.name>>}
+<<#basics.label>>\tagline{<<basics.label>>}<</basics.label>>
+<<#basics.image>>\photoR{2.8cm}{photo}<</basics.image>>
+
+\personalinfo{%
+  <<#basics.email>>\email{<<basics.email>>}<</basics.email>>
+  <<#basics.phone>>\phone{<<basics.phone>>}<</basics.phone>>
+  <<#basics.location.city>>\location{<<basics.location.city>><<#basics.location.countryCode>>, Mali<</basics.location.countryCode>>}<</basics.location.city>>
+  <<#basics.profiles.0.url>>\homepage{<<basics.profiles.0.url>>}<</basics.profiles.0.url>>
+}
+
+\makecvheader
+
+\columnratio{0.6}
+
+\begin{paracol}{2}
+
+% ───────── LEFT COLUMN: Experience + Education ─────────
+<<#work.0>>\cvsection{Expérience}<</work.0>>
+<<#work>>
+\cvevent{<<position>>}{<<name>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}{<<location>>}
+<<#summary>><<summary>>\par<</summary>>
+<<#highlights.0>>
+\begin{itemize}
+<<#highlights>>\item <<.>>
+<</highlights>>
+\end{itemize}
+<</highlights.0>>
+\divider
+<</work>>
+
+<<#education.0>>\cvsection{Formation}<</education.0>>
+<<#education>>
+\cvevent{<<studyType>><<#area>> en <<area>><</area>>}{<<institution>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}{}
+\divider
+<</education>>
+
+% ───────── RIGHT COLUMN: Profile + Skills + Languages ─────────
+\switchcolumn
+
+<<#basics.summary>>
+\cvsection{Profil}
+<<basics.summary>>
+\medskip
+<</basics.summary>>
+
+<<#skills.0>>\cvsection{Compétences}<</skills.0>>
+<<#skills>>
+\cvsubsection{<<name>>}
+<<#levelNum>>\cvskill{<<name>>}{<<levelNum>>}\par<</levelNum>>
+<<#keywords.0>>
+<<#keywords>>\cvtag{<<.>>}<</keywords>>
+<</keywords.0>>
+\divider
+<</skills>>
+
+<<#languages.0>>\cvsection{Langues}<</languages.0>>
+<<#languages>>
+\textbf{<<language>>}<<#fluency>> --- <<fluency>><</fluency>>\par
+<</languages>>
+
+\end{paracol}
+
+\end{document}

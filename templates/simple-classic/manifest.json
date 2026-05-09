@@ -1,0 +1,11 @@
+{
+  "id": "simple-classic",
+  "name": "Simple · Classique",
+  "category": "classic",
+  "description": "Une colonne, sobre, marges généreuses. Compatible avec tous les ATS et adapté aux candidatures conservatrices (banque, fonction publique, ONG traditionnelles).",
+  "engine": "tectonic",
+  "supportsPhoto": false,
+  "supportsLevels": false,
+  "author": "ml-cv",
+  "license": "MIT"
+}

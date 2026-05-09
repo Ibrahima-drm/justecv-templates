@@ -1,0 +1,11 @@
+{
+  "id": "altacv-classic",
+  "name": "AltaCV · Bordeaux & Or",
+  "category": "modern",
+  "description": "Le célèbre AltaCV de LianTze Lim. Deux colonnes asymétriques, typographie sérif (Roboto Slab) et accents bordeaux/or. Idéal pour profils académiques, cadres et chercheurs.",
+  "engine": "tectonic",
+  "supportsPhoto": true,
+  "supportsLevels": true,
+  "author": "LianTze Lim (port ml-cv)",
+  "license": "LPPL-1.3"
+}
