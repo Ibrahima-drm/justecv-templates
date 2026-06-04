@@ -168,7 +168,9 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \typeout {kokoko}
   \typeout \spaceskip
   \spaceskip \namespaceskip \relax
-  \textbf{\LARGE\textls[110]{\textsc{\@name}}}
+  % PATCH JusteCV: \textls (microtype letterspacing) errors under XeTeX.
+  % Drop the spacing and rely on \textsc + larger size for visual weight.
+  \textbf{\LARGE\textsc{\@name}}
 }
 
 \makeatother
