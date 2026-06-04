@@ -26,7 +26,9 @@
 \familyname{}
 
 \begin{document}
+% Always call \tagline so \@tagline is defined for \makecvheader.
 <<#basics.label>>\tagline{<<basics.label>>}<</basics.label>>
+<<^basics.label>>\tagline{ }<</basics.label>>
 
 \personalinfo{%
   <<#basics.email>>\email{<<basics.email>>}<</basics.email>>
