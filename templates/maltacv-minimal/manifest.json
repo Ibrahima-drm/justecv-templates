@@ -1,0 +1,11 @@
+{
+  "id": "maltacv-minimal",
+  "name": "MAltaCV · Minimaliste flammé",
+  "category": "modern",
+  "description": "Version minimaliste de AltaCV par Riccardo Mancini. Accent flame (rouge orangé) sur fond raisin, mise en page deux colonnes asymétriques en sans-serif. Idéal pour profils techniques et startup.",
+  "engine": "tectonic",
+  "supportsPhoto": false,
+  "supportsLevels": false,
+  "author": "Riccardo Mancini / LianTze Lim (port JusteCV)",
+  "license": "LPPL-1.3"
+}

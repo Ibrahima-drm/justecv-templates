@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JusteCV port of MAltaCV by Riccardo Mancini (based on AltaCV by LianTze Lim).
+% LPPL-1.3. Mustache delimiters << >> so they don't conflict with LaTeX braces.
+% Compiled with Tectonic via the justecv-pdf-service.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\documentclass[10pt,a4paper,ragged2e]{maltacv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{textcomp}
+\usepackage{multicol}
+
+\setcolorscheme{raisinblack_flame}
+\setlength\multicolsep{0pt}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+
+\name{<<basics.name>>}
+\firstname{<<basics.name>>}
+\familyname{}
+
+\begin{document}
+<<#basics.label>>\tagline{<<basics.label>>}<</basics.label>>
+
+\personalinfo{%
+  <<#basics.email>>\email{<<basics.email>>}<</basics.email>>
+  <<#basics.phone>>\phone{<<basics.phone>>}<</basics.phone>>
+  <<#basics.location.city>>\location{<<basics.location.city>><<#basics.location.region>>, <<basics.location.region>><</basics.location.region>>}<</basics.location.city>>
+}
+
+<<#basics.summary>>\bio{<<basics.summary>>}<</basics.summary>>
+
+\makecvheader
+
+% ─── Compétences ─────────────────────────────────────────────────────────
+<<#skills.0>>
+\cvsection{Compétences}
+\begin{center}
+  \begin{multicols}{3}
+  <<#skills>>
+    \cvlistitem{<<name>>}{<<#keywords>><<.>><<^last>>, <</last>><</keywords>>}
+  <</skills>>
+  \end{multicols}
+\end{center}
+<</skills.0>>
+
+% ─── Expérience ─────────────────────────────────────────────────────────
+<<#work.0>>\cvsection{Expérience professionnelle}<</work.0>>
+<<#work>>
+\cvexperience{<<position>>}{<<name>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}{<<#location>><<location>><</location>>}{<<#summary>><<summary>><</summary>>}
+<<#highlights.0>>
+\begin{itemize}
+<<#highlights>>
+  \item <<.>>
+<</highlights>>
+\end{itemize}
+<</highlights.0>>
+\divider
+<</work>>
+
+% ─── Formation ─────────────────────────────────────────────────────────
+<<#education.0>>\cvsection{Formation}<</education.0>>
+<<#education>>
+\cvuniversity{<<studyType>><<#area>> -- <<area>><</area>>}{<<institution>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}{}
+<<#summary>>
+\begin{itemize}
+  \item <<summary>>
+\end{itemize}
+<</summary>>
+\divider
+<</education>>
+
+% ─── Langues ───────────────────────────────────────────────────────────
+<<#languages.0>>
+\cvsection{Langues}
+\medskip
+\begin{multicols}{3}
+<<#languages>>
+  \cvlistitem{<<language>>}{<<#fluency>><<fluency>><</fluency>>}
+<</languages>>
+\end{multicols}
+<</languages.0>>
+
+\end{document}

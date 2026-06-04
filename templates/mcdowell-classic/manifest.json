@@ -1,0 +1,11 @@
+{
+  "id": "mcdowell-classic",
+  "name": "McDowell · ATS classique",
+  "category": "classic",
+  "description": "Format CV pro à une colonne popularisé par Gayle McDowell (Cracking the Coding Interview). Marges généreuses, sérif Liberation, parfaitement ATS-friendly. Idéal pour candidatures techniques, banque et fonction publique.",
+  "engine": "tectonic",
+  "supportsPhoto": false,
+  "supportsLevels": false,
+  "author": "Daniil Belyakov / Gayle McDowell (port JusteCV)",
+  "license": "MIT"
+}

@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JusteCV port of McDowell CV by Daniil Belyakov / Gayle McDowell. MIT.
+% Mustache delimiters << >> so they don't conflict with LaTeX braces.
+% Compiled with Tectonic via the justecv-pdf-service.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{mcdowellcv}
+\usepackage{amsmath}
+
+% ─── Header ──────────────────────────────────────────────────────────────
+\name{<<basics.name>>}
+\address{<<#basics.location.city>><<basics.location.city>><</basics.location.city>><<#basics.location.region>>, <<basics.location.region>><</basics.location.region>>}
+\contacts{<<#basics.phone>><<basics.phone>><</basics.phone>><<#basics.phone>><<#basics.email>> \linebreak <</basics.email>><</basics.phone>><<#basics.email>><<basics.email>><</basics.email>>}
+
+\begin{document}
+
+  \makeheader
+
+  % ─── Profil ────────────────────────────────────────────────────────────
+  <<#basics.summary>>
+  \begin{cvsection}{Profil}
+    \begin{cvsubsection}{}{}{}
+      <<basics.summary>>
+    \end{cvsubsection}
+  \end{cvsection}
+  <</basics.summary>>
+
+  % ─── Expérience ────────────────────────────────────────────────────────
+  <<#work.0>>
+  \begin{cvsection}{Expérience professionnelle}
+  <</work.0>>
+  <<#work>>
+    \begin{cvsubsection}{<<position>>}{<<name>><<#location>>, <<location>><</location>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}
+      <<#summary>><<summary>><</summary>>
+      <<#highlights.0>>
+      \begin{itemize}
+      <<#highlights>>
+        \item <<.>>
+      <</highlights>>
+      \end{itemize}
+      <</highlights.0>>
+    \end{cvsubsection}
+  <</work>>
+  <<#work.0>>
+  \end{cvsection}
+  <</work.0>>
+
+  % ─── Formation ─────────────────────────────────────────────────────────
+  <<#education.0>>
+  \begin{cvsection}{Formation}
+  <</education.0>>
+  <<#education>>
+    \begin{cvsubsection}{<<studyType>><<#area>> -- <<area>><</area>>}{<<institution>>}{<<startDate>><<#endDate>> -- <<endDate>><</endDate>>}
+      <<#summary>>
+      \begin{itemize}
+        \item <<summary>>
+      \end{itemize}
+      <</summary>>
+    \end{cvsubsection}
+  <</education>>
+  <<#education.0>>
+  \end{cvsection}
+  <</education.0>>
+
+  % ─── Compétences ───────────────────────────────────────────────────────
+  <<#skills.0>>
+  \begin{cvsection}{Compétences}
+    \begin{cvsubsection}{}{}{}
+      \begin{itemize}
+      <<#skills>>
+        \item \textbf{<<name>>}<<#keywords.0>> : <<#keywords>><<.>><<^last>>, <</last>><</keywords>><</keywords.0>>
+      <</skills>>
+      \end{itemize}
+    \end{cvsubsection}
+  \end{cvsection}
+  <</skills.0>>
+
+  % ─── Langues ───────────────────────────────────────────────────────────
+  <<#languages.0>>
+  \begin{cvsection}{Langues}
+    \begin{cvsubsection}{}{}{}
+      \begin{itemize}
+      <<#languages>>
+        \item \textbf{<<language>>}<<#fluency>> --- <<fluency>><</fluency>>
+      <</languages>>
+      \end{itemize}
+    \end{cvsubsection}
+  \end{cvsection}
+  <</languages.0>>
+
+\end{document}
