@@ -24,8 +24,8 @@
 
 % Set up the fonts according to options
 \def\mainfontsize{11pt}
-% PATCH JusteCV: Times New Roman not available in Tectonic Linux fonts. Use Liberation Serif (bundled in Dockerfile via fonts-liberation).
-\def\mainfontface{Liberation Serif}
+% PATCH JusteCV: Times New Roman not available. TeX Gyre Termes is a Times-compatible OTF font bundled in TeX Live core and auto-fetched by Tectonic.
+\def\mainfontface{TeX Gyre Termes}
 
 \DeclareOption{calibri}{%
   \def\mainfontface{Calibri}
